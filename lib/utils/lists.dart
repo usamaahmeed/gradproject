@@ -8,6 +8,16 @@ List category = [
   'Below Average',
   'Good',
 ];
+List category3 = [
+  'All',
+  'Graphic Design',
+  '3D Design',
+  'Arts & Humanities',
+  'All',
+  'Graphic Design',
+  '3D Design',
+  'Arts & Humanities',
+];
 
 List category1 = [
   'Good',
