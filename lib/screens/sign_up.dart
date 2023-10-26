@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradproject/screens/home.dart';
+import 'package:gradproject/screens/fill_profile.dart';
 import 'package:gradproject/screens/sign_in.dart';
 
 class SignUp extends StatefulWidget {
@@ -18,9 +18,9 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       backgroundColor: Color(0xffF5F9FF),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 34),
-          child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24),
             child: Container(
               width: width,
               child: Column(
@@ -170,7 +170,7 @@ class _SignUpState extends State<SignUp> {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) {
-                            return HomeScreen();
+                            return FillProfileScreen();
                           },
                         ),
                       );

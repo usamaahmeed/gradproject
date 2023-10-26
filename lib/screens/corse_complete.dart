@@ -9,7 +9,7 @@ class CoreseComplete extends StatelessWidget {
       backgroundColor: Color(0xffF5F9FF),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 34),
+          padding: EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             children: [
               Row(

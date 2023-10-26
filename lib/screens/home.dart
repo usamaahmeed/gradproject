@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradproject/utils/listes.dart';
 import 'package:gradproject/widget/default_text.dart';
+import 'package:gradproject/widget/pagepar.dart';
 import 'package:gradproject/widget/sliderWidget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Color(0xFFF5F9FF),
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(children: [
               const SizedBox(
                 height: 30,
@@ -539,11 +540,18 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 5,
                     ),
                   ],
                 ),
-              ))
+              )),
+              const SizedBox(
+                height: 5,
+              ),
+              PagePar(),
+              const SizedBox(
+                height: 5,
+              ),
             ]),
           ),
         ));

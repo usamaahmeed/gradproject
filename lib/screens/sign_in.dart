@@ -18,9 +18,9 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       backgroundColor: Color(0xffF5F9FF),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 34),
-          child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24),
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

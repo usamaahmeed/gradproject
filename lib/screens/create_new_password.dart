@@ -13,7 +13,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
     return Scaffold(
         body: SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: EdgeInsets.symmetric(horizontal: 24),
         child: Column(children: [
           Row(
             children: [
