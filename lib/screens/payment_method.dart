@@ -25,9 +25,14 @@ class _PaymentMethodState extends State<PaymentMethod> {
           padding: EdgeInsets.symmetric(horizontal: 17),
           child: Column(
             children: [
+              SizedBox(
+                height: 15,
+              ),
               Row(children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                   icon: Icon(Icons.arrow_back_outlined),
                 ),
                 Text(
@@ -35,7 +40,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                   style: TextStyle(
                     color: Color(0xff202244),
                     fontWeight: FontWeight.w600,
-                    fontSize: 16,
+                    fontSize: 21,
                   ),
                 )
               ]),
@@ -288,7 +293,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 40),
             ],
           ),
         ),

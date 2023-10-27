@@ -21,7 +21,9 @@ class PopularCourse extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                       color: Color(0xff202244),
                       icon: Icon(Icons.arrow_back_outlined)),
                   Text(
