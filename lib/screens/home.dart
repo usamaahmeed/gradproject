@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/notification.dart';
 import 'package:gradproject/screens/popular_course.dart';
 import 'package:gradproject/utils/listes.dart';
 import 'package:gradproject/widget/default_text.dart';
@@ -63,11 +64,22 @@ class HomeScreen extends StatelessWidget {
                       shape: BoxShape.circle,
                       border: Border.all(width: 2, color: (Color(0xff167F71))),
                     ),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: Icon(
-                        Icons.notifications_none,
-                        color: Color(0xff167F71),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return Notifications();
+                            },
+                          ),
+                        );
+                      },
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.notifications_none,
+                          color: Color(0xff167F71),
+                        ),
                       ),
                     ),
                   ),
