@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/popular_course.dart';
 import 'package:gradproject/utils/listes.dart';
 import 'package:gradproject/widget/default_text.dart';
 import 'package:gradproject/widget/pagepar.dart';
@@ -201,23 +202,34 @@ class HomeScreen extends StatelessWidget {
                         const SizedBox(
                           width: 100,
                         ),
-                        Row(
-                          children: [
-                            DefaultText(
-                              text: 'SEE ALL',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w800,
-                              color: const Color(0xFF0961F5),
-                            ),
-                            const SizedBox(
-                              width: 3,
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios_outlined,
-                              size: 12,
-                              color: Color(0xFF0961F5),
-                            ),
-                          ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return PopularCourse();
+                                },
+                              ),
+                            );
+                          },
+                          child: Row(
+                            children: [
+                              DefaultText(
+                                text: 'SEE ALL',
+                                fontSize: 12,
+                                fontWeight: FontWeight.w800,
+                                color: const Color(0xFF0961F5),
+                              ),
+                              const SizedBox(
+                                width: 3,
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                size: 12,
+                                color: Color(0xFF0961F5),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),

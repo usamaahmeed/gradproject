@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/book_mark.dart';
 import 'package:gradproject/screens/edit_profile.dart';
 import 'package:gradproject/screens/home.dart';
 import 'package:gradproject/screens/payment_options_screen.dart';
@@ -202,35 +203,39 @@ class ProfileScreen extends StatelessWidget {
                               ],
                             ),
                             SizedBox(height: 25),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.translate),
-                                    SizedBox(
-                                      width: 13,
-                                    ),
-                                    Text(
-                                      'Language',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xff202244)),
-                                    ),
-                                    SizedBox(width: 84),
-                                    Text(
-                                      'English(US)',
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                        color: Color(0xff0961F5),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return MyBook();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(CupertinoIcons.bookmark),
+                                      SizedBox(
+                                        width: 13,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Icon(Icons.arrow_forward_ios_outlined),
-                              ],
+                                      Text(
+                                        'Book Mark',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(0xff202244)),
+                                      ),
+                                      SizedBox(width: 84),
+                                    ],
+                                  ),
+                                  Icon(Icons.arrow_forward_ios_outlined),
+                                ],
+                              ),
                             ),
                             SizedBox(height: 25),
                             Row(

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gradproject/utils/lists.dart';
 import 'package:gradproject/widget/build_book_mark.dart';
+import 'package:gradproject/widget/pagepar.dart';
 
-class MyBook extends StatelessWidget {
-  const MyBook({super.key});
+class PopularCourse extends StatelessWidget {
+  const PopularCourse({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class MyBook extends StatelessWidget {
       backgroundColor: Color(0xffF5F9FF),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             children: [
               SizedBox(
@@ -20,26 +21,40 @@ class MyBook extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    icon: Icon(Icons.arrow_back_outlined),
-                  ),
+                      onPressed: () {},
+                      color: Color(0xff202244),
+                      icon: Icon(Icons.arrow_back_outlined)),
                   Text(
-                    'My Bookmark',
+                    'Popular Courses',
                     style: TextStyle(
                       color: Color(0xff202244),
                       fontWeight: FontWeight.w600,
                       fontSize: 21,
                     ),
                   ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: Container(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          suffixIcon: Icon(
+                            Icons.search_outlined,
+                            color: Color(0xff202244),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
               SizedBox(
-                height: 40,
+                height: 35,
               ),
               SizedBox(
-                height: 45,
+                height: 40,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -47,7 +62,7 @@ class MyBook extends StatelessWidget {
                       ListView.separated(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        itemCount: category3.length,
+                        itemCount: category5.length,
                         itemBuilder: (BuildContext context, int index) {
                           return Container(
                             height: 40,
@@ -61,7 +76,7 @@ class MyBook extends StatelessWidget {
                             child: Container(
                               margin: EdgeInsets.all(2),
                               child: Text(
-                                category3[index],
+                                category5[index],
                                 style: TextStyle(
                                     color: Color(0xff202244),
                                     fontWeight: FontWeight.w700,
@@ -84,24 +99,27 @@ class MyBook extends StatelessWidget {
                 height: 20,
               ),
               Expanded(
-                child: SizedBox(
-                  width: 360,
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    itemCount: 10,
-                    itemBuilder: (BuildContext context, int index) {
-                      return BookMarkWidget();
-                    },
-                    separatorBuilder: (BuildContext context, int index) {
-                      return SizedBox(
-                        height: 10,
-                      );
-                    },
-                  ),
+                child: ListView.separated(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int index) {
+                    return BookMarkWidget();
+                    ;
+                  },
+                  separatorBuilder: (BuildContext context, int index) {
+                    return SizedBox(
+                      height: 10,
+                    );
+                  },
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 5,
+              ),
+              PagePar(),
+              SizedBox(
+                height: 5,
               ),
             ],
           ),
