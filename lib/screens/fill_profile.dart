@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradproject/screens/home.dart';
+import 'package:gradproject/screens/congratulation_account.dart';
 import 'package:gradproject/screens/sign_up.dart';
 
 class FillProfileScreen extends StatelessWidget {
@@ -255,7 +255,7 @@ class FillProfileScreen extends StatelessWidget {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) {
-                        return HomeScreen();
+                        return CongratulationAccount();
                       },
                     ),
                   );

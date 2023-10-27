@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradproject/screens/notification.dart';
 import 'package:gradproject/screens/popular_course.dart';
+import 'package:gradproject/screens/top_mentors.dart';
 import 'package:gradproject/utils/listes.dart';
 import 'package:gradproject/widget/default_text.dart';
 import 'package:gradproject/widget/pagepar.dart';
@@ -18,6 +19,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xFFF5F9FF),
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -492,20 +494,31 @@ class HomeScreen extends StatelessWidget {
                         const SizedBox(
                           width: 130,
                         ),
-                        Row(
-                          children: [
-                            DefaultText(
-                              text: 'SEE ALL',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w800,
-                              color: const Color(0xFF0961F5),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios_rounded,
-                              color: Color(0xFF0961F5),
-                              size: 12,
-                            ),
-                          ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return TopMentors();
+                                },
+                              ),
+                            );
+                          },
+                          child: Row(
+                            children: [
+                              DefaultText(
+                                text: 'SEE ALL',
+                                fontSize: 12,
+                                fontWeight: FontWeight.w800,
+                                color: const Color(0xFF0961F5),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_rounded,
+                                color: Color(0xFF0961F5),
+                                size: 12,
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),

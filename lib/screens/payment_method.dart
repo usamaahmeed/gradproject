@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/congratulation_payment.dart';
 
 class PaymentMethod extends StatefulWidget {
   PaymentMethod({super.key});
@@ -275,7 +276,15 @@ class _PaymentMethodState extends State<PaymentMethod> {
               ),
               SizedBox(height: 30),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return CongratulationPayment();
+                      },
+                    ),
+                  );
+                },
                 child: Text(
                   'Enroll Course - 55',
                   style: TextStyle(

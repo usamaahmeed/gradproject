@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/create_new_password.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -218,7 +219,15 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   height: 60,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return CreateNewPassword();
+                        },
+                      ),
+                    );
+                  },
                   child: Text(
                     'continue',
                     style: TextStyle(

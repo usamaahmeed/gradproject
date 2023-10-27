@@ -29,7 +29,7 @@ class PaymentOptions extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xff202244),
                       fontWeight: FontWeight.w600,
-                      fontSize: 16,
+                      fontSize: 21,
                     ),
                   ),
                 ],

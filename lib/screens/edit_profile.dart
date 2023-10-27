@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/profile.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});
@@ -252,7 +253,15 @@ class EditProfileScreen extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ProfileScreen();
+                      },
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30))),

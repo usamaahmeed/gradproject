@@ -4,6 +4,7 @@ import 'package:gradproject/screens/book_mark.dart';
 import 'package:gradproject/screens/edit_profile.dart';
 import 'package:gradproject/screens/home.dart';
 import 'package:gradproject/screens/payment_options_screen.dart';
+import 'package:gradproject/screens/terms_screen.dart';
 import 'package:gradproject/widget/pagepar.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -57,7 +58,7 @@ class ProfileScreen extends StatelessWidget {
                         width: 360,
                         height: 766,
                         padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(
@@ -130,7 +131,7 @@ class ProfileScreen extends StatelessWidget {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) {
-                                      return PaymentOptions();
+                                      return MyBook();
                                     },
                                   ),
                                 );
@@ -141,20 +142,21 @@ class ProfileScreen extends StatelessWidget {
                                 children: [
                                   Row(
                                     children: [
-                                      Icon(Icons.payment_rounded),
+                                      Icon(CupertinoIcons.bookmark),
                                       SizedBox(
                                         width: 13,
                                       ),
                                       Text(
-                                        'payment Option',
+                                        'Book Mark',
                                         style: TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.bold,
                                             color: Color(0xff202244)),
                                       ),
+                                      SizedBox(width: 84),
                                     ],
                                   ),
-                                  Icon(Icons.arrow_forward_ios_outlined)
+                                  Icon(Icons.arrow_forward_ios_outlined),
                                 ],
                               ),
                             ),
@@ -208,7 +210,7 @@ class ProfileScreen extends StatelessWidget {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) {
-                                      return MyBook();
+                                      return PaymentOptions();
                                     },
                                   ),
                                 );
@@ -219,111 +221,56 @@ class ProfileScreen extends StatelessWidget {
                                 children: [
                                   Row(
                                     children: [
-                                      Icon(CupertinoIcons.bookmark),
+                                      Icon(Icons.payment_rounded),
                                       SizedBox(
                                         width: 13,
                                       ),
                                       Text(
-                                        'Book Mark',
+                                        'payment Option',
                                         style: TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.bold,
                                             color: Color(0xff202244)),
                                       ),
-                                      SizedBox(width: 84),
+                                    ],
+                                  ),
+                                  Icon(Icons.arrow_forward_ios_outlined)
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 25),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return TermsScreen();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(Icons.shield_outlined),
+                                      SizedBox(
+                                        width: 13,
+                                      ),
+                                      Text(
+                                        'TermsConditions',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(0xff202244)),
+                                      ),
                                     ],
                                   ),
                                   Icon(Icons.arrow_forward_ios_outlined),
                                 ],
                               ),
-                            ),
-                            SizedBox(height: 25),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.dark_mode_outlined),
-                                    SizedBox(
-                                      width: 13,
-                                    ),
-                                    Text(
-                                      'Dark Mode',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xff202244)),
-                                    ),
-                                  ],
-                                ),
-                                Icon(Icons.arrow_forward_ios_outlined),
-                              ],
-                            ),
-                            SizedBox(height: 25),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.shield_outlined),
-                                    SizedBox(
-                                      width: 13,
-                                    ),
-                                    Text(
-                                      'TermsConditions',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xff202244)),
-                                    ),
-                                  ],
-                                ),
-                                Icon(Icons.arrow_forward_ios_outlined),
-                              ],
-                            ),
-                            SizedBox(height: 25),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.help_outline),
-                                    SizedBox(
-                                      width: 13,
-                                    ),
-                                    Text(
-                                      'Help Center',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xff202244)),
-                                    ),
-                                  ],
-                                ),
-                                Icon(Icons.arrow_forward_ios_outlined),
-                              ],
-                            ),
-                            SizedBox(height: 25),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.mail_outline),
-                                    SizedBox(
-                                      width: 13,
-                                    ),
-                                    Text(
-                                      'Invite Friends',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xff202244)),
-                                    ),
-                                  ],
-                                ),
-                                Icon(Icons.arrow_forward_ios_outlined),
-                              ],
                             ),
                           ],
                         ),

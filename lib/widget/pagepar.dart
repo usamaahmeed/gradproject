@@ -3,7 +3,7 @@ import 'package:gradproject/screens/home.dart';
 import 'package:gradproject/screens/profile.dart';
 
 class PagePar extends StatelessWidget {
-  const PagePar({
+  PagePar({
     super.key,
   });
 
