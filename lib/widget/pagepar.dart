@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gradproject/screens/home.dart';
+import 'package:gradproject/screens/inbox_chat.dart';
 import 'package:gradproject/screens/profile.dart';
+import 'package:gradproject/screens/transactions.dart';
 
 class PagePar extends StatelessWidget {
   PagePar({
@@ -89,13 +91,14 @@ class PagePar extends StatelessWidget {
               height: 56,
               child: IconButton(
                 onPressed: () {
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) {
-                  //       return CartScreen();
-                  //     },
-                  //   ),
-                  // );
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return InboxChat();
+                      },
+                    ),
+                  );
                 },
                 icon: Column(
                   children: [
@@ -124,7 +127,16 @@ class PagePar extends StatelessWidget {
               // width: 71,
               height: 56,
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return Transactions();
+                      },
+                    ),
+                  );
+                },
                 icon: Column(
                   children: [
                     Icon(

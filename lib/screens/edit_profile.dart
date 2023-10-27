@@ -131,7 +131,9 @@ class EditProfileScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           color: Color(0XFFFFFFFF),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
                         ),
                         child: TextFormField(
                           decoration: InputDecoration(
@@ -158,7 +160,9 @@ class EditProfileScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
                         ),
                         child: TextFormField(
                           decoration: InputDecoration(
@@ -187,8 +191,9 @@ class EditProfileScreen extends StatelessWidget {
                                   color: Colors.white, width: 0.0),
                             ),
                             border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
                             ),
                           ),
                         ),
@@ -199,7 +204,9 @@ class EditProfileScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           color: Color(0XFFFFFFFF),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
                         ),
                         child: TextFormField(
                           decoration: InputDecoration(
@@ -226,7 +233,9 @@ class EditProfileScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           color: Color(0XFFFFFFFF),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
                         ),
                         child: TextFormField(
                           decoration: InputDecoration(
@@ -264,7 +273,10 @@ class EditProfileScreen extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30),
+                    ),
+                  ),
                   fixedSize: Size(MediaQuery.of(context).size.width, 60),
                   backgroundColor: Color(0XFF0961F5),
                 ),
