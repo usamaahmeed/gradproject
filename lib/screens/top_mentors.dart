@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/mentor_details.dart';
 import 'package:gradproject/widget/pagepar.dart';
 
 class TopMentors extends StatelessWidget {
@@ -59,43 +60,54 @@ class TopMentors extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: 30,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      margin: EdgeInsets.symmetric(vertical: 10),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Color(0xff000000),
-                            radius: 28,
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return MentorDetailsScreen();
+                            },
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                'Jiya Shetty',
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xff202244),
+                        );
+                      },
+                      child: Container(
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        child: Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: Color(0xff000000),
+                              radius: 28,
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 10,
                                 ),
-                              ),
-                              Text(
-                                '3D Design',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color(0xff545454),
+                                Text(
+                                  'Jiya Shetty',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff202244),
+                                  ),
                                 ),
-                              ),
-                            ],
-                            mainAxisSize: MainAxisSize.min,
-                          )
-                        ],
+                                Text(
+                                  '3D Design',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xff545454),
+                                  ),
+                                ),
+                              ],
+                              mainAxisSize: MainAxisSize.min,
+                            )
+                          ],
+                        ),
                       ),
                     );
                   },

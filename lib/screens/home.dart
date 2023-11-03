@@ -1,6 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/category.dart';
+import 'package:gradproject/screens/course_list.dart';
+import 'package:gradproject/screens/mentor_details.dart';
 import 'package:gradproject/screens/notification.dart';
 import 'package:gradproject/screens/popular_course.dart';
 import 'package:gradproject/screens/top_mentors.dart';
@@ -154,20 +157,31 @@ class HomeScreen extends StatelessWidget {
                           color: const Color(0xFF202244),
                           fontWeight: FontWeight.w600,
                         ),
-                        Row(
-                          children: [
-                            DefaultText(
-                              text: 'SEE ALL',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w800,
-                              color: const Color(0xFF0961F5),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios_rounded,
-                              color: Color(0xFF0961F5),
-                              size: 12,
-                            ),
-                          ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return Category();
+                                },
+                              ),
+                            );
+                          },
+                          child: Row(
+                            children: [
+                              DefaultText(
+                                text: 'SEE ALL',
+                                fontSize: 12,
+                                fontWeight: FontWeight.w800,
+                                color: const Color(0xFF0961F5),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_rounded,
+                                color: Color(0xFF0961F5),
+                                size: 12,
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -182,11 +196,22 @@ class HomeScreen extends StatelessWidget {
                               shrinkWrap: true,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (BuildContext context, int index) {
-                                return DefaultText(
-                                  text: World1[index],
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 15,
-                                  color: Color(0xffA0A4AB),
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return CoursesList();
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  child: DefaultText(
+                                    text: World1[index],
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: Color(0xffA0A4AB),
+                                  ),
                                 );
                               },
                               separatorBuilder:
@@ -535,37 +560,49 @@ class HomeScreen extends StatelessWidget {
                         itemCount: images1.length,
                         shrinkWrap: true,
                         itemBuilder: (context, int index) {
-                          return Container(
-                            height: 70,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  height: 70,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                            images1[index],
-                                          ),
-                                          fit: BoxFit.cover),
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(10),
-                                      )),
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return MentorDetailsScreen();
+                                  },
                                 ),
-                                Center(
-                                  child: Text(
-                                    World3[index],
-                                    style: TextStyle(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w600),
+                              );
+                            },
+                            child: Container(
+                              height: 70,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    height: 70,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                              images1[index],
+                                            ),
+                                            fit: BoxFit.cover),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(10),
+                                        )),
                                   ),
-                                ),
-                              ],
+                                  Center(
+                                    child: Text(
+                                      World3[index],
+                                      style: TextStyle(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           );
                         },

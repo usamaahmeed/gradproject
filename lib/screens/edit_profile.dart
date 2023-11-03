@@ -172,7 +172,7 @@ class EditProfileScreen extends StatelessWidget {
                               padding: EdgeInsets.symmetric(horizontal: 20),
                               child: Row(
                                 children: [
-                                  Image.asset('assets/images/Icon.png'),
+                                  Image.asset('assets/images/Icons.png'),
                                   Icon(
                                     Icons.keyboard_arrow_down_outlined,
                                     weight: 2,

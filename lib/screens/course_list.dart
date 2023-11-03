@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/mentors.dart';
 import 'package:gradproject/widget/build_book_mark.dart';
 import 'package:gradproject/widget/pagepar.dart';
 
@@ -21,7 +22,9 @@ class CoursesList extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: Icon(Icons.arrow_back_outlined),
                   ),
                   Text(
@@ -86,20 +89,33 @@ class CoursesList extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  Container(
-                    width: 170,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color(0xffE8F1FF),
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                    ),
-                    child: Text(
-                      'Mentors',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w800,
-                        color: Color(0xff202244),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pop();
+
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Mentors();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 170,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE8F1FF),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: Text(
+                        'Mentors',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xff202244),
+                        ),
                       ),
                     ),
                   ),

@@ -23,8 +23,7 @@ class Transactions extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {
-                        Navigator.of(context).pop();
-                        Navigator.of(context).push(
+                        Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                             builder: (context) {
                               return HomeScreen();

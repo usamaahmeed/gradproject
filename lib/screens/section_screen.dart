@@ -38,7 +38,7 @@ class SectionScreen extends StatelessWidget {
                       SizedBox(height: 8),
                       Container(
                         width: 360,
-                        height: 880,
+                        // height: 880,
                         padding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                         decoration: BoxDecoration(
@@ -85,6 +85,7 @@ class SectionScreen extends StatelessWidget {
                             ),
                             ListView.builder(
                               itemCount: 2,
+                              physics: NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
                               itemBuilder: (BuildContext context, int index) {
                                 return AvailableSection(
@@ -128,23 +129,22 @@ class SectionScreen extends StatelessWidget {
                             SizedBox(
                               height: 15,
                             ),
-                            Expanded(
-                              child: ListView.separated(
-                                shrinkWrap: true,
-                                scrollDirection: Axis.vertical,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return BlockSection(
-                                    data: listOfSection[index],
-                                  );
-                                },
-                                separatorBuilder:
-                                    (BuildContext context, int index) {
-                                  return Divider(
-                                    color: Color(0xffc3cdda),
-                                  );
-                                },
-                                itemCount: listOfSection.length,
-                              ),
+                            ListView.separated(
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.vertical,
+                              itemBuilder: (BuildContext context, int index) {
+                                return BlockSection(
+                                  data: listOfSection[index],
+                                );
+                              },
+                              separatorBuilder:
+                                  (BuildContext context, int index) {
+                                return Divider(
+                                  color: Color(0xffc3cdda),
+                                );
+                              },
+                              itemCount: listOfSection.length,
                             ),
                             SizedBox(
                               height: 15,
@@ -185,23 +185,22 @@ class SectionScreen extends StatelessWidget {
                             SizedBox(
                               height: 15,
                             ),
-                            Expanded(
-                              child: ListView.separated(
-                                shrinkWrap: true,
-                                scrollDirection: Axis.vertical,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return BlockSection(
-                                    data: listOfSection2[index],
-                                  );
-                                },
-                                separatorBuilder:
-                                    (BuildContext context, int index) {
-                                  return Divider(
-                                    color: Color(0xffc3cdda),
-                                  );
-                                },
-                                itemCount: listOfSection2.length,
-                              ),
+                            ListView.separated(
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.vertical,
+                              itemBuilder: (BuildContext context, int index) {
+                                return BlockSection(
+                                  data: listOfSection2[index],
+                                );
+                              },
+                              separatorBuilder:
+                                  (BuildContext context, int index) {
+                                return Divider(
+                                  color: Color(0xffc3cdda),
+                                );
+                              },
+                              itemCount: listOfSection2.length,
                             ),
                           ],
                         ),

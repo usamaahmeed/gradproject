@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gradproject/screens/book_mark.dart';
 import 'package:gradproject/screens/edit_profile.dart';
 import 'package:gradproject/screens/home.dart';
+import 'package:gradproject/screens/notification_setting.dart';
 import 'package:gradproject/screens/payment_options_screen.dart';
+import 'package:gradproject/screens/security_screen.dart';
 import 'package:gradproject/screens/terms_screen.dart';
 import 'package:gradproject/widget/pagepar.dart';
 
@@ -28,8 +30,7 @@ class ProfileScreen extends StatelessWidget {
                   Divider(),
                   IconButton(
                       onPressed: () {
-                        Navigator.of(context).pop();
-                        Navigator.of(context).push(
+                        Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                             builder: (context) {
                               return HomeScreen();
@@ -161,48 +162,72 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 25),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.notifications_none),
-                                    SizedBox(
-                                      width: 13,
-                                    ),
-                                    Text(
-                                      'Notification',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xff202244)),
-                                    ),
-                                  ],
-                                ),
-                                Icon(Icons.arrow_forward_ios_outlined),
-                              ],
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return NotificationSetting();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(Icons.notifications_none),
+                                      SizedBox(
+                                        width: 13,
+                                      ),
+                                      Text(
+                                        'Notification',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(0xff202244)),
+                                      ),
+                                    ],
+                                  ),
+                                  Icon(Icons.arrow_forward_ios_outlined),
+                                ],
+                              ),
                             ),
                             SizedBox(height: 25),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.security_outlined),
-                                    SizedBox(
-                                      width: 13,
-                                    ),
-                                    Text(
-                                      'Security',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xff202244)),
-                                    ),
-                                  ],
-                                ),
-                                Icon(Icons.arrow_forward_ios_outlined),
-                              ],
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return Security();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(Icons.security_outlined),
+                                      SizedBox(
+                                        width: 13,
+                                      ),
+                                      Text(
+                                        'Security',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(0xff202244)),
+                                      ),
+                                    ],
+                                  ),
+                                  Icon(Icons.arrow_forward_ios_outlined),
+                                ],
+                              ),
                             ),
                             SizedBox(height: 25),
                             GestureDetector(

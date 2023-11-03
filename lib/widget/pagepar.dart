@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/course_complete.dart';
 import 'package:gradproject/screens/home.dart';
 import 'package:gradproject/screens/inbox_chat.dart';
 import 'package:gradproject/screens/profile.dart';
@@ -23,8 +24,7 @@ class PagePar extends StatelessWidget {
               height: 56,
               child: IconButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) {
                         return HomeScreen();
@@ -62,7 +62,15 @@ class PagePar extends StatelessWidget {
               // width: 65,
               height: 56,
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return CourseComplete();
+                      },
+                    ),
+                  );
+                },
                 icon: Column(
                   children: [
                     Icon(
@@ -91,8 +99,7 @@ class PagePar extends StatelessWidget {
               height: 56,
               child: IconButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) {
                         return InboxChat();
@@ -128,8 +135,7 @@ class PagePar extends StatelessWidget {
               height: 56,
               child: IconButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) {
                         return Transactions();
@@ -165,8 +171,7 @@ class PagePar extends StatelessWidget {
               height: 56,
               child: IconButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) {
                         return ProfileScreen();

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/course_list.dart';
 import 'package:gradproject/widget/pagepar.dart';
 
 class Mentors extends StatelessWidget {
@@ -20,7 +21,9 @@ class Mentors extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: Icon(
                       Icons.arrow_back_outlined,
                       color: Color(0xff202244),
@@ -70,19 +73,31 @@ class Mentors extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Container(
-                    width: 165,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: Color(0xffE8F1FF),
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
-                    child: Text(
-                      'Courses',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w800,
-                          color: Color(0xff202244)),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CoursesList();
+                          },
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 165,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          color: Color(0xffE8F1FF),
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      child: Text(
+                        'Courses',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff202244)),
+                      ),
                     ),
                   ),
                   Expanded(

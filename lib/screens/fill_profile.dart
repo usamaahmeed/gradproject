@@ -192,7 +192,7 @@ class FillProfileScreen extends StatelessWidget {
                               width: 90,
                               child: Row(
                                 children: [
-                                  Image.asset('assets/images/Icon.png'),
+                                  Image.asset('assets/images/Icons.png'),
                                   Icon(Icons.arrow_drop_down_sharp)
                                 ],
                               ),
