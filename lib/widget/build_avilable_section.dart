@@ -71,15 +71,6 @@ class AvailableSection extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(
-          height: 15,
-        ),
-        Divider(
-          color: Color(0xffc3cdda),
-        ),
-        SizedBox(
-          height: 15,
-        ),
       ],
     );
   }

@@ -19,7 +19,9 @@ class WriteReviews extends StatelessWidget {
                 ),
                 Row(children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: Icon(Icons.arrow_back_outlined),
                   ),
                   Text(
@@ -147,7 +149,9 @@ class WriteReviews extends StatelessWidget {
                 ),
                 SizedBox(height: 40),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                   child: Text(
                     'Submit Review',
                     style: TextStyle(

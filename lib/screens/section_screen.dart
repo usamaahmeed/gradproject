@@ -21,7 +21,11 @@ class SectionScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: Icon(Icons.arrow_back)),
                   Text(
                     'Curriculcum',
                     style: TextStyle(
@@ -83,7 +87,7 @@ class SectionScreen extends StatelessWidget {
                             SizedBox(
                               height: 15,
                             ),
-                            ListView.builder(
+                            ListView.separated(
                               itemCount: 2,
                               physics: NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
@@ -92,6 +96,25 @@ class SectionScreen extends StatelessWidget {
                                   data: listOfSection1[index],
                                 );
                               },
+                              separatorBuilder:
+                                  (BuildContext context, int index) {
+                                return Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Divider(
+                                      color: Color(0xffc3cdda),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
+                            SizedBox(
+                              height: 20,
                             ),
                             Row(
                               children: [

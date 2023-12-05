@@ -16,10 +16,14 @@ dependencies:
   carousel_slider: ^4.2.1
   flutter_onboarding_slider: ^1.0.10
   card_swiper: ^3.0.1
+  sms_otp_auto_verify: ^2.1.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
 
 
 flutter:

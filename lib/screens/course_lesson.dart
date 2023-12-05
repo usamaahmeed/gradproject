@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradproject/screens/course_complete.dart';
+import 'package:gradproject/screens/course_ongoing_lesson.dart';
 import 'package:gradproject/screens/home.dart';
 import 'package:gradproject/widget/pagepar.dart';
 
@@ -150,138 +151,149 @@ class CourseOngoing extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 124,
-                      width: 364,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return CourseOngoingLessons();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 124,
+                        width: 364,
+                        decoration: BoxDecoration(
+                          color: Color(0xffFFFFFF),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
                         ),
-                      ),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/images/imgblack.png',
-                            width: 130,
-                            height: 124,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'UI/UX Design',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color(0xffFF6B00),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/imgblack.png',
+                              width: 130,
+                              height: 124,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'UI/UX Design',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xffFF6B00),
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                'Intro to UI/UX Design',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color(0xff202244),
+                                Text(
+                                  'Intro to UI/UX Design',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xff202244),
+                                  ),
                                 ),
-                              ),
-                              Container(
-                                width: 150,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(
-                                          Icons.grade,
-                                          size: 20,
-                                          color: Colors.amberAccent,
-                                        ),
-                                        Text(
-                                          '4.4',
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w600,
-                                            color: Color(0xff202244),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      '|',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                        color: Color(0xff202244),
-                                      ),
-                                    ),
-                                    Text(
-                                      '1Hrs 58 Mins',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                        color: Color(0xff202244),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 200,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      padding: EdgeInsets.all(2),
-                                      width: 130,
-                                      height: 10,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(5),
-                                        ),
-                                        color: Color(0xffE8F1FF),
-                                      ),
-                                      child: Row(
+                                Container(
+                                  width: 150,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
                                         children: [
-                                          Container(
-                                            height: 8,
-                                            width: 90,
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.all(
-                                                Radius.circular(5),
-                                              ),
-                                              color: Color(0xff167F71),
-                                            ),
+                                          Icon(
+                                            Icons.grade,
+                                            size: 20,
+                                            color: Colors.amberAccent,
                                           ),
-                                          Expanded(
-                                            child: SizedBox(),
+                                          Text(
+                                            '4.4',
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w600,
+                                              color: Color(0xff202244),
+                                            ),
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    Container(
-                                      width: 37,
-                                      child: Text(
-                                        '93/125',
+                                      Text(
+                                        '|',
                                         style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
                                           color: Color(0xff202244),
-                                          fontWeight: FontWeight.w800,
-                                          fontSize: 11,
                                         ),
                                       ),
-                                    )
-                                  ],
+                                      Text(
+                                        '1Hrs 58 Mins',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          color: Color(0xff202244),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              )
-                            ],
-                          ),
-                        ],
+                                Container(
+                                  width: 200,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.all(2),
+                                        width: 130,
+                                        height: 10,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(5),
+                                          ),
+                                          color: Color(0xffE8F1FF),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              height: 8,
+                                              width: 90,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.all(
+                                                  Radius.circular(5),
+                                                ),
+                                                color: Color(0xff167F71),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: SizedBox(),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        width: 37,
+                                        child: Text(
+                                          '93/125',
+                                          style: TextStyle(
+                                            color: Color(0xff202244),
+                                            fontWeight: FontWeight.w800,
+                                            fontSize: 11,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },

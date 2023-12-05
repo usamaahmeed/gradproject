@@ -229,25 +229,31 @@ class MentorDetailsScreen extends StatelessWidget {
                             ),
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Expanded(
-                                child: Container(
-                                  height: 52,
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 10, horizontal: 55),
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffE8F1FF),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Couses',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Color(0xff202244),
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w600,
+                                child: GestureDetector(
+                                  onTap: () {},
+                                  child: Container(
+                                    height: 52,
+                                    decoration: ShapeDecoration(
+                                      color: Color(0xFFF4F8FE),
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(
+                                            width: 2, color: Color(0xFFE8F1FF)),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'Couses',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Color(0xFF202244),
+                                          fontSize: 15,
+                                          fontFamily: 'Jost',
+                                          fontWeight: FontWeight.w600,
+                                          height: 0,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -266,25 +272,24 @@ class MentorDetailsScreen extends StatelessWidget {
                                   },
                                   child: Container(
                                     height: 52,
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 55),
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffF5F9FF),
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    alignment: Alignment.centerRight,
-                                    child: Text(
-                                      'Ratings',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Color(0XFF202244),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w600,
+                                    decoration:
+                                        BoxDecoration(color: Color(0xFFE8F1FF)),
+                                    child: Center(
+                                      child: Text(
+                                        'Ratings',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Color(0xFF202244),
+                                          fontSize: 15,
+                                          fontFamily: 'Jost',
+                                          fontWeight: FontWeight.w600,
+                                          height: 0,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
+                              )
                             ],
                           ),
                           SizedBox(height: 20),

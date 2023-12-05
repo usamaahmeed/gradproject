@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/write_reviews.dart';
 import 'package:gradproject/utils/lists.dart';
 
 class ReviewsScreen extends StatelessWidget {
@@ -20,7 +21,9 @@ class ReviewsScreen extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: Icon(Icons.arrow_back_outlined),
                   ),
                   Text(
@@ -61,7 +64,7 @@ class ReviewsScreen extends StatelessWidget {
                 height: 20,
               ),
               SizedBox(
-                height: 30,
+                height: 35,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -73,6 +76,7 @@ class ReviewsScreen extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           return Container(
                             height: 30,
+                            padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color(0xffE8F1FF),
                               borderRadius: BorderRadius.all(
@@ -102,104 +106,167 @@ class ReviewsScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 22,
+                height: 15,
               ),
               Expanded(
                 child: ListView.separated(
-                  scrollDirection: Axis.vertical,
                   shrinkWrap: true,
-                  itemCount: listOfProducts.length,
+                  // physics: NeverScrollableScrollPhysics(),
+                  separatorBuilder: (BuildContext context, int index) {
+                    return Divider();
+                  },
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
-                      height: 154,
-                      width: 360,
-                      padding: EdgeInsets.all(21),
+                      height: 135,
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                          color: Colors.white),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CircleAvatar(
+                            radius: 30,
                             backgroundColor: Colors.black,
-                            radius: 20,
                           ),
                           SizedBox(
                             width: 10,
                           ),
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    listOfProducts[index]['title']!,
-                                    style: TextStyle(
-                                      color: Color(0xff202244),
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w600,
+                              Container(
+                                width: 250,
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Mary',
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w600,
+                                          color: Color(0xff202244)),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    height: 26,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xff4D81E5),
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(15),
+                                    Expanded(
+                                      child: SizedBox(
+                                        height: 5,
                                       ),
                                     ),
-                                    child: Container(
-                                      padding: EdgeInsets.all(16),
-                                      margin: EdgeInsets.all(2),
+                                    Container(
+                                      height: 30,
+                                      width: 60,
+                                      padding: EdgeInsets.all(2),
                                       decoration: BoxDecoration(
-                                        color: Color(0xffE8F1FF),
+                                        color: Colors.blue,
                                         borderRadius: BorderRadius.all(
-                                          Radius.circular(15),
+                                          Radius.circular(20),
                                         ),
                                       ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Container(
-                                width: 255,
-                                height: 48,
-                                child: Text(
-                                  listOfProducts[index]['text']!,
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    color: Color(0xff545454),
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 13,
-                                  ),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFF5F9FF),
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.grade_sharp,
+                                              size: 15,
+                                              color: Color(0xffFAC025),
+                                            ),
+                                            Center(
+                                              child: Text(
+                                                '4.2',
+                                                style: TextStyle(
+                                                  color: Color(0XFF202244),
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
-                              Row(
-                                children: [],
-                              )
+                              Container(
+                                width: 230,
+                                child: Text(
+                                  'This course has been very useful. Mentor was well spoken totally loved it',
+                                  maxLines: 2,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color(0xff202244)),
+                                ),
+                              ),
+                              Container(
+                                width: 145,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    SizedBox(
+                                      width: 40,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Icon(
+                                            Icons.favorite_outlined,
+                                            size: 15,
+                                            color: Color(0xffDD2E44),
+                                          ),
+                                          Text(
+                                            ' 760',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w800,
+                                                fontSize: 12,
+                                                color: Color(0xff202244)),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Text(
+                                      '2 Weeks Agos ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w800,
+                                          fontSize: 12,
+                                          color: Color(0xff202244)),
+                                    )
+                                  ],
+                                ),
+                              ),
                             ],
                           )
                         ],
                       ),
                     );
                   },
-                  separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(
-                      height: 10,
-                    );
-                  },
+                  itemCount: 10,
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return WriteReviews();
+                      },
+                    ),
+                  );
+                },
                 child: Text(
                   'Write a Review',
                   style: TextStyle(

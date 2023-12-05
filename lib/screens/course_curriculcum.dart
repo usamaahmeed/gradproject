@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/course_details.dart';
+import 'package:gradproject/screens/payment_method.dart';
+import 'package:gradproject/screens/section_screen.dart';
 import 'package:gradproject/utils/lists.dart';
 import 'package:gradproject/widget/build_avilable_section.dart';
 
@@ -201,20 +204,32 @@ class CoursesCurriculcum extends StatelessWidget {
                               Row(
                                 children: [
                                   Expanded(
-                                    child: Container(
-                                      height: 52,
-                                      decoration: BoxDecoration(
-                                          color: Color(0xFFE8F1FF)),
-                                      child: Center(
-                                        child: Text(
-                                          'About',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Color(0xFF202244),
-                                            fontSize: 15,
-                                            fontFamily: 'Jost',
-                                            fontWeight: FontWeight.w600,
-                                            height: 0,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) {
+                                              return CourseDetails();
+                                            },
+                                          ),
+                                        );
+                                      },
+                                      child: Container(
+                                        height: 52,
+                                        decoration: BoxDecoration(
+                                            color: Color(0xFFE8F1FF)),
+                                        child: Center(
+                                          child: Text(
+                                            'About',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Color(0xFF202244),
+                                              fontSize: 15,
+                                              fontFamily: 'Jost',
+                                              fontWeight: FontWeight.w600,
+                                              height: 0,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -293,7 +308,7 @@ class CoursesCurriculcum extends StatelessWidget {
                                     SizedBox(
                                       height: 15,
                                     ),
-                                    ListView.builder(
+                                    ListView.separated(
                                       itemCount: 2,
                                       shrinkWrap: true,
                                       physics: NeverScrollableScrollPhysics(),
@@ -303,6 +318,25 @@ class CoursesCurriculcum extends StatelessWidget {
                                           data: listOfSection1[index],
                                         );
                                       },
+                                      separatorBuilder:
+                                          (BuildContext context, int index) {
+                                        return Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 15,
+                                            ),
+                                            Divider(
+                                              color: Color(0xffc3cdda),
+                                            ),
+                                            SizedBox(
+                                              height: 15,
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                    SizedBox(
+                                      height: 20,
                                     ),
                                     Row(
                                       children: [
@@ -341,7 +375,15 @@ class CoursesCurriculcum extends StatelessWidget {
                                       children: [
                                         Expanded(child: SizedBox()),
                                         TextButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (context) {
+                                                  return SectionScreen();
+                                                },
+                                              ),
+                                            );
+                                          },
                                           child: Text(
                                             'See All',
                                             style: TextStyle(
@@ -375,7 +417,15 @@ class CoursesCurriculcum extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PaymentMethod();
+                          },
+                        ),
+                      );
+                    },
                     child: Text('Enroll Course - 499/-'),
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(

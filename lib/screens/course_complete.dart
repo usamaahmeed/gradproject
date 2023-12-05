@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/certificate_screen.dart';
+import 'package:gradproject/screens/course_complete_lesson.dart';
 import 'package:gradproject/screens/course_lesson.dart';
 import 'package:gradproject/screens/home.dart';
 import 'package:gradproject/widget/pagepar.dart';
@@ -150,118 +152,165 @@ class _CourseCompleteState extends State<CourseComplete> {
                   shrinkWrap: true,
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 124,
-                      width: 364,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return CourseCompleteLessons();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 124,
+                        width: 364,
+                        decoration: BoxDecoration(
+                          color: Color(0xffFFFFFF),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
                         ),
-                      ),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/images/imgblack.png',
-                            width: 130,
-                            height: 124,
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(10),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 190,
-                                  height: 10,
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                          child: SizedBox(
-                                        height: 5,
-                                      )),
-                                      Checkbox(
-                                        checkColor: Colors.white,
-                                        activeColor: Colors.green,
-                                        value: itemChecked[
-                                            index], // Use the corresponding value from the list
-                                        onChanged: (value) {
-                                          setState(() {
-                                            itemChecked[index] = value ??
-                                                false; // Update the list with the new value
-                                          });
-                                        },
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Text(
-                                  'UI/UX Design',
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color(0xffFF6B00),
-                                  ),
-                                ),
-                                Text(
-                                  'Intro to UI/UX Design',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    color: Color(0xff202244),
-                                  ),
-                                ),
-                                Container(
-                                  width: 150,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.grade,
-                                            size: 20,
-                                            color: Colors.amberAccent,
-                                          ),
-                                          Text(
-                                            '4.4',
-                                            style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xff202244),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Text(
-                                        '|',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xff202244),
-                                        ),
-                                      ),
-                                      Text(
-                                        '1Hrs 58 Mins',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xff202244),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/imgblack.png',
+                              width: 130,
+                              height: 124,
                             ),
-                          ),
-                        ],
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: 190,
+                                    height: 10,
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                            child: SizedBox(
+                                          height: 5,
+                                        )),
+                                        Checkbox(
+                                          checkColor: Colors.white,
+                                          activeColor: Colors.green,
+                                          value: itemChecked[
+                                              index], // Use the corresponding value from the list
+                                          onChanged: (value) {
+                                            setState(() {
+                                              itemChecked[index] = value ??
+                                                  false; // Update the list with the new value
+                                            });
+                                          },
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Text(
+                                    'UI/UX Design',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color(0xffFF6B00),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    'Intro to UI/UX Design',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff202244),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Container(
+                                    width: 150,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.grade,
+                                              size: 20,
+                                              color: Colors.amberAccent,
+                                            ),
+                                            Text(
+                                              '4.4',
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600,
+                                                color: Color(0xff202244),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Text(
+                                          '|',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xff202244),
+                                          ),
+                                        ),
+                                        Text(
+                                          '1Hrs 58 Mins',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xff202244),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Container(
+                                    width: 170,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (context) {
+                                                  return CertificateScreen();
+                                                },
+                                              ),
+                                            );
+                                          },
+                                          child: Text(
+                                            'View Certificate',
+                                            style: TextStyle(
+                                                color: Color(0xff167F71),
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w800),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },

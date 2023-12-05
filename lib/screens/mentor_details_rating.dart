@@ -229,7 +229,6 @@ class MentorDetailsRating extends StatelessWidget {
                             ),
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Expanded(
                                 child: GestureDetector(
@@ -245,20 +244,19 @@ class MentorDetailsRating extends StatelessWidget {
                                   },
                                   child: Container(
                                     height: 52,
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 55),
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffF5F9FF),
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      'Couses',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Color(0xff202244),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w600,
+                                    decoration:
+                                        BoxDecoration(color: Color(0xFFE8F1FF)),
+                                    child: Center(
+                                      child: Text(
+                                        'Couses',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Color(0xFF202244),
+                                          fontSize: 15,
+                                          fontFamily: 'Jost',
+                                          fontWeight: FontWeight.w600,
+                                          height: 0,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -267,27 +265,183 @@ class MentorDetailsRating extends StatelessWidget {
                               Expanded(
                                 child: Container(
                                   height: 52,
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 10, horizontal: 55),
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffE8F1FF),
-                                    shape: BoxShape.rectangle,
+                                  decoration: ShapeDecoration(
+                                    color: Color(0xFFF4F8FE),
+                                    shape: RoundedRectangleBorder(
+                                      side: BorderSide(
+                                          width: 2, color: Color(0xFFE8F1FF)),
+                                    ),
                                   ),
-                                  alignment: Alignment.centerRight,
-                                  child: Text(
-                                    'Ratings',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Color(0XFF202244),
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w600,
+                                  child: Center(
+                                    child: Text(
+                                      'Ratings',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Color(0xFF202244),
+                                        fontSize: 15,
+                                        fontFamily: 'Jost',
+                                        fontWeight: FontWeight.w600,
+                                        height: 0,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
+                              )
                             ],
                           ),
                           SizedBox(height: 20),
+                          ListView.separated(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            separatorBuilder:
+                                (BuildContext context, int index) {
+                              return Divider();
+                            },
+                            itemBuilder: (BuildContext context, int index) {
+                              return Container(
+                                height: 115,
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 30,
+                                      backgroundColor: Colors.black,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 250,
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                'Mary',
+                                                style: TextStyle(
+                                                    fontSize: 17,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Color(0xff202244)),
+                                              ),
+                                              Expanded(
+                                                child: SizedBox(
+                                                  height: 5,
+                                                ),
+                                              ),
+                                              Container(
+                                                height: 30,
+                                                width: 60,
+                                                padding: EdgeInsets.all(2),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.blue,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                    Radius.circular(20),
+                                                  ),
+                                                ),
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xFFF5F9FF),
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                      Radius.circular(20),
+                                                    ),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        Icons.grade_sharp,
+                                                        size: 15,
+                                                        color:
+                                                            Color(0xffFAC025),
+                                                      ),
+                                                      Center(
+                                                        child: Text(
+                                                          '4.2',
+                                                          style: TextStyle(
+                                                            color: Color(
+                                                                0XFF202244),
+                                                            fontSize: 13,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 230,
+                                          child: Text(
+                                            'This course has been very useful. Mentor was well spoken totally loved it',
+                                            maxLines: 2,
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w700,
+                                                color: Color(0xff202244)),
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 145,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              SizedBox(
+                                                width: 40,
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.favorite_outlined,
+                                                      size: 15,
+                                                      color: Color(0xffDD2E44),
+                                                    ),
+                                                    Text(
+                                                      ' 760',
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                          fontSize: 12,
+                                                          color: Color(
+                                                              0xff202244)),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Text(
+                                                '2 Weeks Agos ',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w800,
+                                                    fontSize: 12,
+                                                    color: Color(0xff202244)),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              );
+                            },
+                            itemCount: 4,
+                          ),
                         ],
                       ),
                     ),

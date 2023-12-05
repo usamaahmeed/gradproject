@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gradproject/screens/course_curriculcum.dart';
+import 'package:gradproject/screens/payment_method.dart';
+import 'package:gradproject/screens/reviews_screen.dart';
 
 class CourseDetails extends StatelessWidget {
   const CourseDetails({super.key});
@@ -226,20 +229,33 @@ class CourseDetails extends StatelessWidget {
                                     ),
                                   ),
                                   Expanded(
-                                    child: Container(
-                                      height: 52,
-                                      decoration: BoxDecoration(
-                                          color: Color(0xFFE8F1FF)),
-                                      child: Center(
-                                        child: Text(
-                                          'Curriculcum',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Color(0xFF202244),
-                                            fontSize: 15,
-                                            fontFamily: 'Jost',
-                                            fontWeight: FontWeight.w600,
-                                            height: 0,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) {
+                                              return CoursesCurriculcum();
+                                            },
+                                          ),
+                                        );
+                                      },
+                                      child: Container(
+                                        height: 52,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFE8F1FF),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Curriculcum',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Color(0xFF202244),
+                                              fontSize: 15,
+                                              fontFamily: 'Jost',
+                                              fontWeight: FontWeight.w600,
+                                              height: 0,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -534,24 +550,35 @@ class CourseDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Expanded(child: SizedBox()),
-                                Row(
-                                  children: [
-                                    Text(
-                                      'SEE ALL',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: Color(0xFF0961F5),
-                                        fontSize: 12,
-                                        fontFamily: 'Mulish',
-                                        fontWeight: FontWeight.w800,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return ReviewsScreen();
+                                        },
                                       ),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios_outlined,
-                                      color: Color(0xFF0961F5),
-                                      size: 15,
-                                    ),
-                                  ],
+                                    );
+                                  },
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'SEE ALL',
+                                        textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                          color: Color(0xFF0961F5),
+                                          fontSize: 12,
+                                          fontFamily: 'Mulish',
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                      Icon(
+                                        Icons.arrow_forward_ios_outlined,
+                                        color: Color(0xFF0961F5),
+                                        size: 15,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
@@ -713,7 +740,7 @@ class CourseDetails extends StatelessWidget {
                                 );
                               },
                               itemCount: 4,
-                            )
+                            ),
                           ],
                         )
                       ],
@@ -730,7 +757,15 @@ class CourseDetails extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PaymentMethod();
+                          },
+                        ),
+                      );
+                    },
                     child: Text('Enroll Course - 499/-'),
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(

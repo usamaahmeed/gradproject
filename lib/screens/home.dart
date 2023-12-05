@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradproject/screens/category.dart';
+import 'package:gradproject/screens/course_details.dart';
 import 'package:gradproject/screens/course_list.dart';
 import 'package:gradproject/screens/mentor_details.dart';
 import 'package:gradproject/screens/notification.dart';
@@ -365,138 +366,150 @@ class HomeScreen extends StatelessWidget {
                             itemCount: images1.length,
                             shrinkWrap: true,
                             itemBuilder: (context, int index) {
-                              return Container(
-                                height: 240,
-                                width: 280,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: const Color(0xffFFFFFF),
-                                ),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      height: 134,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                              images1[index],
-                                            ),
-                                            fit: BoxFit.cover),
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(10),
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return CourseDetails();
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  height: 240,
+                                  width: 280,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: const Color(0xffFFFFFF),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        height: 134,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                images1[index],
+                                              ),
+                                              fit: BoxFit.cover),
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(10),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    SizedBox(
-                                      height: 95,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                DefaultText(
-                                                  text: 'Graphic Design',
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w700,
-                                                  color:
-                                                      const Color(0xffFF6B00),
-                                                ),
-                                                const SizedBox(
-                                                  height: 7,
-                                                ),
-                                                DefaultText(
-                                                  text:
-                                                      'Graphic Design Advanced',
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Color(0xff202244),
-                                                ),
-                                                const SizedBox(
-                                                  height: 10,
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    DefaultText(
-                                                      text: '850/-',
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.w800,
-                                                      color: const Color(
-                                                          0xff0961F5),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 6,
-                                                    ),
-                                                    DefaultText(
-                                                      text: '|',
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.w700,
-                                                      color: const Color(
-                                                          0xff000000),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 16,
-                                                    ),
-                                                    const Icon(
-                                                      Icons.star,
-                                                      color: Color(0xffFAC025),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 3,
-                                                    ),
-                                                    DefaultText(
-                                                      text: '4.2',
-                                                      fontSize: 11,
-                                                      fontWeight:
-                                                          FontWeight.w800,
-                                                      color: const Color(
-                                                          0xff202244),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 16,
-                                                    ),
-                                                    DefaultText(
-                                                      text: '|',
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.w700,
-                                                      color: const Color(
-                                                          0xff000000),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 16,
-                                                    ),
-                                                    DefaultText(
-                                                      text: '7830 Std',
-                                                      fontSize: 11,
-                                                      fontWeight:
-                                                          FontWeight.w800,
-                                                      color: const Color(
-                                                          0xff202244),
-                                                    ),
-                                                  ],
-                                                )
-                                              ]),
-                                          const Icon(
-                                            Icons.bookmark_outline_rounded,
-                                            color: Color(0xff167F71),
-                                          ),
-                                        ],
+                                      SizedBox(
+                                        height: 10,
                                       ),
-                                    )
-                                  ],
+                                      SizedBox(
+                                        height: 95,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  DefaultText(
+                                                    text: 'Graphic Design',
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w700,
+                                                    color:
+                                                        const Color(0xffFF6B00),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 7,
+                                                  ),
+                                                  DefaultText(
+                                                    text:
+                                                        'Graphic Design Advanced',
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Color(0xff202244),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      DefaultText(
+                                                        text: '850/-',
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                        color: const Color(
+                                                            0xff0961F5),
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 6,
+                                                      ),
+                                                      DefaultText(
+                                                        text: '|',
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        color: const Color(
+                                                            0xff000000),
+                                                      ),
+                                                      SizedBox(
+                                                        width: 16,
+                                                      ),
+                                                      const Icon(
+                                                        Icons.star,
+                                                        color:
+                                                            Color(0xffFAC025),
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 3,
+                                                      ),
+                                                      DefaultText(
+                                                        text: '4.2',
+                                                        fontSize: 11,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                        color: const Color(
+                                                            0xff202244),
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 16,
+                                                      ),
+                                                      DefaultText(
+                                                        text: '|',
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        color: const Color(
+                                                            0xff000000),
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 16,
+                                                      ),
+                                                      DefaultText(
+                                                        text: '7830 Std',
+                                                        fontSize: 11,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                        color: const Color(
+                                                            0xff202244),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ]),
+                                            const Icon(
+                                              Icons.bookmark_outline_rounded,
+                                              color: Color(0xff167F71),
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               );
                             },
